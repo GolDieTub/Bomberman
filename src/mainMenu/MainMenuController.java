@@ -1,0 +1,110 @@
+package mainMenu;
+
+import game.Constants;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import utilities.StageUtils;
+
+import java.io.IOException;
+
+public class MainMenuController {
+
+    @FXML
+    ImageView pointer1;
+
+
+
+
+
+    @FXML
+    ImageView pointer3;
+
+    @FXML
+    ImageView newGame;
+
+    @FXML
+    ImageView information;
+
+    @FXML
+    ImageView exit;
+
+    private Image start;
+    private Image selStart;
+
+    private Image exitImg;
+    private Image selExitImg;
+
+
+    @FXML
+    public void initialize() {
+        start = new Image(Constants.START_IMAGE);
+        selStart = new Image(Constants.SELECTED_START_IMAGE);
+        exitImg = new Image(Constants.EXIT_IMAGE);
+        selExitImg = new Image(Constants.SELECTED_EXIT_IMAGE);
+    }
+
+    @FXML
+    public void onNewGamePressed() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../complexityMenu/complexityMenuScene.fxml"));
+      //  FXMLLoader loader = new FXMLLoader(getClass().getResource("../connectingForm/connectingMenu.fxml"));
+        Parent root = (Parent) loader.load();
+        Stage stage = new Stage();
+        stage.setTitle("BOMBERMEN");
+        stage.setScene(new Scene(root, 620, 480));
+        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.show();
+        StageUtils.closeStage(pointer1);
+    }
+
+   /* @FXML
+    public void onInformationPressed() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../infScene/informationScene.fxml"));
+        Parent root = (Parent) loader.load();
+        Stage stage = new Stage();
+        stage.setTitle("BOMBERMEN");
+        stage.setScene(new Scene(root, 620, 480));
+        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.show();
+        StageUtils.closeStage(pointer1);
+    }*/
+
+    @FXML
+    public void onExitPressed() {
+        StageUtils.closeStage(newGame);
+    }
+
+    @FXML
+    public void onStartEntered() {
+
+        pointer3.setVisible(false);
+        exit.setImage(exitImg);
+        pointer1.setVisible(true);
+        newGame.setImage(selStart);
+    }
+
+    @FXML
+    public void onInformationEntered() {
+        pointer1.setVisible(false);
+        newGame.setImage(start);
+        pointer3.setVisible(false);
+        exit.setImage(exitImg);
+
+
+    }
+
+    @FXML
+    public void onExitEntered() {
+        pointer1.setVisible(false);
+        newGame.setImage(start);
+
+
+        pointer3.setVisible(true);
+        exit.setImage(selExitImg);
+    }
+}

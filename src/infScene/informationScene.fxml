@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+
+
+<Pane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="620.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="infScene.InformationSceneController">
+   <children>
+      <ImageView fx:id="backImg" fitHeight="41.0" fitWidth="86.0" layoutX="29.0" layoutY="421.0" onMouseEntered="#onBackEntered" onMouseExited="#onBackExited" onMousePressed="#onBackToLevelMenu" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/backToLevelMenu.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="115.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/maimProg.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="334.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/ks.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="55.0" fitWidth="143.0" layoutX="115.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/name.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="63.0" fitWidth="233.0" layoutX="332.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/bomberman-2020.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="55.0" fitWidth="182.0" layoutX="115.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/year.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="32.0" fitWidth="79.0" layoutX="395.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/2020.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>
