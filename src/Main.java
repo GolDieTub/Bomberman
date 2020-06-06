@@ -42,8 +42,10 @@ public class Main extends Application {
         stage.showAndWait();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         launch(args);
+        Server server = new Server();
+        server.start();
+        server.join();
     }
-
 }
